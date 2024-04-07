@@ -124,6 +124,14 @@ question_pool = [
     ("Rajesh, a system administrator, noticed that some clients of his company were victims of DNS Cache Poisoning. They were redirected to a malicious site when they tried to access Rajesh's company site. What is the best recommendation to deal with such a threat?", "Use Domain Name System Security Extensions (DNSSEC)", ["Customer awareness", "Use a multi-factor authentication", "Use of security agents on customers' computers.", "Use Domain Name System Security Extensions (DNSSEC)"])
 ]
 
+print("""\n .d8888b.  8888888888 888    888      888b     d888  .d88888b.   .d8888b.  888    d8P  
+d88P  Y88b 888        888    888      8888b   d8888 d88P" "Y88b d88P  Y88b 888   d8P   
+888    888 888        888    888      88888b.d88888 888     888 888    888 888  d8P    
+888        8888888    8888888888      888Y88888P888 888     888 888        888d88K     
+888        888        888    888      888 Y888P 888 888     888 888        8888888b    
+888    888 888        888    888      888  Y8P  888 888     888 888    888 888  Y88b   
+Y88b  d88P 888        888    888      888   "   888 Y88b. .d88P Y88b  d88P 888   Y88b  
+ "Y8888P"  8888888888 888    888      888       888  "Y88888P"   "Y8888P"  888    Y88b \n\n""")
 
 def choose_questions(pool, num_questions=125):
     return random.sample(pool, num_questions)
