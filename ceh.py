@@ -49,7 +49,7 @@ def ask_question(question_number, question, ca, options):
 def run_quiz():
     score = 0
 
-    sq = choose_questions(question_pool, min(125, len(question_pool)))
+    sq = choose_questions(question_pool, min(50, len(question_pool)))
 
     for question_number, (question, ca, options) in enumerate(sq, start=1):
         if ask_question(question_number, question, ca, options):
