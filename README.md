@@ -2,6 +2,8 @@
 
 Welcome to the Ethical Hacking Quiz Application, designed to help learners test their knowledge of the Certified Ethical Hacker v12 curriculum. This CLI-based tool offers an interactive way to engage with ethical hacking concepts and prepare for CEH v12 certification exam.
 
+![Screenshot from 2024-04-27 12-00-29](https://github.com/H3LLKY4T/CEH-mocktest/assets/141442170/7bbf93e9-0c07-4253-8752-93375fa544df)
+
 ## Features
 
 - **Dynamic Question Pool**: Questions are fetched dynamically from a remote source, ensuring a varied and up-to-date quiz each time you run the application.
