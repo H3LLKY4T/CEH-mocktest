@@ -45,6 +45,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 This tool is provided for educational purposes only. The author is not responsible for any misuse or damage caused by this tool.
 
 ## Contact
-If you have any questions, please open an issue in the repository, or contact the author directly at your-email@example.com.
+If you have any questions, please open an issue in the repository, or contact the author directly at hellkyat@proton.me
 
 Enjoy testing your ethical hacking skills!
