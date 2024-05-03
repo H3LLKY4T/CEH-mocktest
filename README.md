@@ -2,7 +2,8 @@
 
 Welcome to the Ethical Hacking Quiz Application, designed to help learners test their knowledge of the Certified Ethical Hacker v12 curriculum. This CLI-based tool offers an interactive way to engage with ethical hacking concepts and prepare for CEH v12 certification exam.
 
-![Screenshot from 2024-04-27 12-00-29](https://github.com/H3LLKY4T/CEH-mocktest/assets/141442170/7bbf93e9-0c07-4253-8752-93375fa544df)
+![Screenshot from 2024-05-03 19-44-45](https://github.com/H3LLKY4T/CEH-mocktest/assets/141442170/676b7ef3-575c-422a-bcf1-9cbd954685dd)
+
 
 ## Features
 
@@ -33,7 +34,7 @@ pip install requests colorama
 ## Usage
 To run the quiz, simply execute the main script:
 ```
-python3 ceh.py
+python3 mocktest.py
 ```
 ## Contributing
 Contributions to the Ethical Hacking Quiz Application are welcome! Please feel free to fork the repository, make your changes, and submit a pull request.
