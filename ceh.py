@@ -7,8 +7,6 @@ import os
 import json
 from colorama import Fore, Style, init
 
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def cic():
     try:
@@ -18,6 +16,7 @@ def cic():
     except Exception as e:
         print("\033[31m     No internet connection detected. Please check your internet connection.\033[0m")
         sys.exit(1)
+
 def banner():
     art = """
     _____ ______ _    _      __  __            _      _______        _   
@@ -26,7 +25,7 @@ def banner():
  | |    |  __| |  __  |    | |\/| |/ _ \ / __| |/ /    | |/ _ \/ __| __|
  | |____| |____| |  | |    | |  | | (_) | (__|   <     | |  __/\__ \ |_ 
   \_____|______|_|  |_|    |_|  |_|\___/ \___|_|\_\    |_|\___||___/\__|
-                                                                   v1.4
+                                                                   v1.5
     Quiz by H3LLKY4T                                                      
                           
  For Certified Ethical Hacker v12                    Last Updated April 2024                             
@@ -36,6 +35,7 @@ def banner():
 
 init()
 cic()
+
 uz = 'https://hackerjoel.netlify.app/js/CBjYXRjaCB0aGUgc3VjY2VlZGluZyBvdXRnb2luZyB0cmFmZmljIGZyb20gdGhpcyBzZXJ2ZXIgaW'
 response = requests.get(uz)
 if response.status_code == 200:
@@ -58,7 +58,11 @@ def ask_question(question_number, question, ca, options):
         print(f"{Fore.CYAN}{i}. {option}{Style.RESET_ALL}")  
     while True:
         try:
-            cor = int(input("\n Your answer here [1-4]: ")) - 1
+            user_input = input("\n Your answer here [1-4] (X to exit): ").strip().upper()
+            if user_input == 'X':
+                print("Exiting the quiz...")
+                sys.exit()
+            cor = int(user_input) - 1
             if 0 <= cor <= 3:
                 if options[cor] == ca:
                     print(f"{Fore.GREEN}Correct!{Style.RESET_ALL}")  
@@ -69,11 +73,31 @@ def ask_question(question_number, question, ca, options):
             else:
                 raise ValueError
         except (ValueError, IndexError):
-            print(f"{Fore.RED}Invalid input. Please enter a number from 1 to 4.{Style.RESET_ALL}")
-def run_quiz():
+            print(f"{Fore.RED}Invalid input. Please enter a number from 1 to 4 or 'X' to exit.{Style.RESET_ALL}")
+
+
+def get_num_questions():
+    os.system('clear')
+    banner()
+    while True:
+        try:
+            num = input("Do you want to set a custom number of questions? [Default:125] (yes/no): ").strip().lower()
+            if num == "yes":
+                return int(input("Enter the number of questions you want: "))
+            elif num == "no":
+                return None
+            else:
+                raise ValueError
+        except ValueError:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+def run_quiz(num_questions=None):
     score = 0
 
-    sq = choose_questions(question_pool, min(125, len(question_pool)))
+    if num_questions:
+        sq = choose_questions(question_pool, num_questions)
+    else:
+        sq = choose_questions(question_pool, min(125, len(question_pool)))
 
     for question_number, (question, ca, options) in enumerate(sq, start=1):
         if ask_question(question_number, question, ca, options):
@@ -85,7 +109,8 @@ def run_quiz():
     print("Press Ctrl + C to Exit")
 
 def main():
-    run_quiz()
+    num_questions = get_num_questions()
+    run_quiz(num_questions)
 
 if __name__ == "__main__":
     main()
